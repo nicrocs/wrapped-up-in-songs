@@ -1,4 +1,8 @@
-# AstroPaper 📄
+# Wrapped Up in Songs
+
+Personal blog by Nic Guest-Jelley. Built with AstroPaper and deployed on Vercel.
+
+## AstroPaper 📄
 
 ![AstroPaper](public/astropaper-og.jpg)
 [![Figma](https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white)](https://www.figma.com/community/file/1356898632249991861)

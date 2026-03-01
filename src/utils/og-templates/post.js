@@ -1,97 +1,11 @@
 import satori from "satori";
-// import { html } from "satori-html";
 import { SITE } from "@/config";
 import loadGoogleFonts from "../loadGoogleFont";
 
-// const markup = html`<div
-//       style={{
-//         background: "#fefbfb",
-//         width: "100%",
-//         height: "100%",
-//         display: "flex",
-//         alignItems: "center",
-//         justifyContent: "center",
-//       }}
-//     >
-//       <div
-//         style={{
-//           position: "absolute",
-//           top: "-1px",
-//           right: "-1px",
-//           border: "4px solid #000",
-//           background: "#ecebeb",
-//           opacity: "0.9",
-//           borderRadius: "4px",
-//           display: "flex",
-//           justifyContent: "center",
-//           margin: "2.5rem",
-//           width: "88%",
-//           height: "80%",
-//         }}
-//       />
-
-//       <div
-//         style={{
-//           border: "4px solid #000",
-//           background: "#fefbfb",
-//           borderRadius: "4px",
-//           display: "flex",
-//           justifyContent: "center",
-//           margin: "2rem",
-//           width: "88%",
-//           height: "80%",
-//         }}
-//       >
-//         <div
-//           style={{
-//             display: "flex",
-//             flexDirection: "column",
-//             justifyContent: "space-between",
-//             margin: "20px",
-//             width: "90%",
-//             height: "90%",
-//           }}
-//         >
-//           <p
-//             style={{
-//               fontSize: 72,
-//               fontWeight: "bold",
-//               maxHeight: "84%",
-//               overflow: "hidden",
-//             }}
-//           >
-//             {post.data.title}
-//           </p>
-//           <div
-//             style={{
-//               display: "flex",
-//               justifyContent: "space-between",
-//               width: "100%",
-//               marginBottom: "8px",
-//               fontSize: 28,
-//             }}
-//           >
-//             <span>
-//               by{" "}
-//               <span
-//                 style={{
-//                   color: "transparent",
-//                 }}
-//               >
-//                 "
-//               </span>
-//               <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-//                 {post.data.author}
-//               </span>
-//             </span>
-
-//             <span style={{ overflow: "hidden", fontWeight: "bold" }}>
-//               {SITE.title}
-//             </span>
-//           </div>
-//         </div>
-//       </div>
-//     </div>`;
+// Color scheme
+// Background: #141417  Primary text: #E8E6E1
+// Secondary:  #9CA3AF  Accent:       #D4963A
+// Border:     #2C2C30
 
 export default async post => {
   return satori(
@@ -99,119 +13,182 @@ export default async post => {
       type: "div",
       props: {
         style: {
-          background: "#fefbfb",
+          background: "#141417",
           width: "100%",
           height: "100%",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
+          fontFamily: "Lora",
         },
         children: [
+          // Amber glow bottom-left
           {
             type: "div",
             props: {
               style: {
                 position: "absolute",
-                top: "-1px",
-                right: "-1px",
-                border: "4px solid #000",
-                background: "#ecebeb",
-                opacity: "0.9",
-                borderRadius: "4px",
-                display: "flex",
-                justifyContent: "center",
-                margin: "2.5rem",
-                width: "88%",
-                height: "80%",
+                bottom: "-120px",
+                left: "-80px",
+                width: "500px",
+                height: "500px",
+                borderRadius: "50%",
+                background:
+                  "radial-gradient(circle, rgba(194,130,42,0.18) 0%, transparent 70%)",
               },
             },
           },
+
+          // Top rule
           {
             type: "div",
             props: {
               style: {
-                border: "4px solid #000",
-                background: "#fefbfb",
-                borderRadius: "4px",
+                position: "absolute",
+                top: "48px",
+                left: "80px",
+                right: "80px",
+                height: "1px",
+                background: "rgba(212,150,58,0.3)",
+              },
+            },
+          },
+
+          // Bottom rule
+          {
+            type: "div",
+            props: {
+              style: {
+                position: "absolute",
+                bottom: "48px",
+                left: "80px",
+                right: "80px",
+                height: "1px",
+                background: "rgba(212,150,58,0.3)",
+              },
+            },
+          },
+
+          // Main content
+          {
+            type: "div",
+            props: {
+              style: {
                 display: "flex",
-                justifyContent: "center",
-                margin: "2rem",
-                width: "88%",
-                height: "80%",
+                flexDirection: "column",
+                justifyContent: "space-between",
+                padding: "80px 96px",
+                width: "100%",
+                height: "100%",
               },
-              children: {
-                type: "div",
-                props: {
-                  style: {
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    margin: "20px",
-                    width: "90%",
-                    height: "90%",
+              children: [
+                // Site name / eyebrow
+                {
+                  type: "div",
+                  props: {
+                    style: {
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "12px",
+                    },
+                    children: [
+                      {
+                        type: "span",
+                        props: {
+                          style: {
+                            width: "28px",
+                            height: "2px",
+                            background: "#D4963A",
+                            display: "flex",
+                          },
+                        },
+                      },
+                      {
+                        type: "span",
+                        props: {
+                          style: {
+                            fontSize: 16,
+                            fontWeight: "400",
+                            color: "#9CA3AF",
+                            letterSpacing: "0.2em",
+                            textTransform: "uppercase",
+                          },
+                          children: SITE.title,
+                        },
+                      },
+                    ],
                   },
-                  children: [
-                    {
-                      type: "p",
-                      props: {
-                        style: {
-                          fontSize: 72,
-                          fontWeight: "bold",
-                          maxHeight: "84%",
-                          overflow: "hidden",
-                        },
-                        children: post.data.title,
-                      },
-                    },
-                    {
-                      type: "div",
-                      props: {
-                        style: {
-                          display: "flex",
-                          justifyContent: "space-between",
-                          width: "100%",
-                          marginBottom: "8px",
-                          fontSize: 28,
-                        },
-                        children: [
-                          {
-                            type: "span",
-                            props: {
-                              children: [
-                                "by ",
-                                {
-                                  type: "span",
-                                  props: {
-                                    style: { color: "transparent" },
-                                    children: '"',
-                                  },
-                                },
-                                {
-                                  type: "span",
-                                  props: {
-                                    style: {
-                                      overflow: "hidden",
-                                      fontWeight: "bold",
-                                    },
-                                    children: post.data.author,
-                                  },
-                                },
-                              ],
-                            },
-                          },
-                          {
-                            type: "span",
-                            props: {
-                              style: { overflow: "hidden", fontWeight: "bold" },
-                              children: SITE.title,
-                            },
-                          },
-                        ],
-                      },
-                    },
-                  ],
                 },
-              },
+
+                // Post title (center)
+                {
+                  type: "p",
+                  props: {
+                    style: {
+                      fontSize: 72,
+                      fontWeight: "600",
+                      color: "#E8E6E1",
+                      lineHeight: 1.15,
+                      maxHeight: "340px",
+                      overflow: "hidden",
+                      margin: "0",
+                      letterSpacing: "-0.01em",
+                    },
+                    children: post.data.title,
+                  },
+                },
+
+                // Footer row: author + accent bar
+                {
+                  type: "div",
+                  props: {
+                    style: {
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                      width: "100%",
+                    },
+                    children: [
+                      {
+                        type: "span",
+                        props: {
+                          style: {
+                            fontSize: 22,
+                            color: "#9CA3AF",
+                            fontWeight: "400",
+                          },
+                          children: [
+                            "by ",
+                            {
+                              type: "span",
+                              props: {
+                                style: {
+                                  color: "#D4963A",
+                                  fontWeight: "600",
+                                },
+                                children: post.data.author,
+                              },
+                            },
+                          ],
+                        },
+                      },
+                      // Small decorative dot in amber
+                      {
+                        type: "div",
+                        props: {
+                          style: {
+                            width: "8px",
+                            height: "8px",
+                            borderRadius: "50%",
+                            background: "#D4963A",
+                            opacity: "0.6",
+                          },
+                        },
+                      },
+                    ],
+                  },
+                },
+              ],
             },
           },
         ],

@@ -4,6 +4,12 @@
   /* ===== Override default Tailwind Typography styles ===== */
   .app-prose {
     @apply prose;
+    font-family: var(--font-body);
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-ui);
+    }
+    
 
     h1,
     h2,

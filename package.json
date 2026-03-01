@@ -1,5 +1,6 @@
 {
   "name": "wrapped-up-in-songs",
+  "description": "Source code for Wrapped Up in Songs — wrappedupinsongs.com.",
   "type": "module",
   "version": "5.5.1",
   "scripts": {
@@ -22,7 +23,6 @@
     "lodash.kebabcase": "^4.1.1",
     "remark-collapse": "^0.1.2",
     "remark-toc": "^9.0.0",
-    "satori": "^0.18.3",
     "sharp": "^0.34.5",
     "slugify": "^1.6.6",
     "tailwindcss": "^4.1.18"
@@ -41,6 +41,7 @@
     "prettier": "^3.7.4",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "satori": "^0.19.2",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.51.0"
   }
