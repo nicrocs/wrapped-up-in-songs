@@ -70,3 +70,13 @@ html[data-theme="dark"] {
 :target {
   scroll-margin-block: 1rem;
 }
+
+.hero-description a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hero-description a:hover {
+  opacity: 0.8;
+}

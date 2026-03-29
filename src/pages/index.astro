@@ -41,7 +41,7 @@ const recentPosts = sortedPosts.filter(({ data }) => !data.featured);
         <span class="sr-only">RSS Feed</span>
       </a>
 
-      <p>{SITE.heroDescription}</p>
+      <p class="hero-description" set:html={SITE.heroDescription} />
       <!-- {
         // only display if at least one social link is enabled
         SOCIALS.length > 0 && (

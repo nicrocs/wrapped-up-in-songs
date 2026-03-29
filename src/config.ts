@@ -5,7 +5,7 @@ export const SITE = {
   desc: "A songwriter's search for why the songs he loves matter to him.",
   title: "Wrapped Up in Songs",
   heroTitle: "Getting lost in songs worth getting lost in.",
-  heroDescription: "I've been playing and writing music for thirty years, but I've never stopped to ask why certain songs hit so hard. This blog is that investigation — taking apart the songs I love to understand how they work, one song at a time.",
+  heroDescription: "I've been playing and writing music for thirty years, but I've never stopped to ask why certain songs invite returning back to time and again. This blog investigates how certain songs I love work, one song at a time. If you're looking for my music, you can find it on <a href='https://nicguestjelley.bandcamp.com'>BandCamp</a>",
   ogImage: "wrapped-og.png",
   lightAndDarkMode: true,
   postPerIndex: 4,

@@ -11,14 +11,14 @@ import {
 import { transformerFileName } from "./src/utils/transformers/fileName";
 import { SITE } from "./src/config";
 
+import mdx from "@astrojs/mdx";
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [
-    sitemap({
-      filter: page => SITE.showArchives || !page.endsWith("/archives"),
-    }),
-  ],
+  integrations: [sitemap({
+    filter: page => SITE.showArchives || !page.endsWith("/archives"),
+  }), mdx()],
   markdown: {
     remarkPlugins: [remarkToc, [remarkCollapse, { test: "Table of contents" }]],
     shikiConfig: {
@@ -57,25 +57,22 @@ export default defineConfig({
       }),
     },
   },
-  experimental: {
-    preserveScriptOrder: true,
-    fonts: [
-      {
-        name: "Lora",
-        cssVariable: "--font-lora",
-        provider: fontProviders.google(),
-        fallbacks: ["Georgia", "serif"],
-        weights: [400, 600],
-        styles: ["normal", "italic"],
-      },
-      {
-        name: "DM Sans",
-        cssVariable: "--font-dm-sans",
-        provider: fontProviders.google(),
-        fallbacks: ["system-ui", "sans-serif"],
-        weights: [300, 400, 600],
-        styles: ["normal"],
-      },
-    ],
-  },
+  fonts: [
+    {
+      name: "Lora",
+      cssVariable: "--font-lora",
+      provider: fontProviders.google(),
+      fallbacks: ["Georgia", "serif"],
+      weights: [400, 600],
+      styles: ["normal", "italic"],
+    },
+    {
+      name: "DM Sans",
+      cssVariable: "--font-dm-sans",
+      provider: fontProviders.google(),
+      fallbacks: ["system-ui", "sans-serif"],
+      weights: [300, 400, 600],
+      styles: ["normal"],
+    },
+  ],
 });
