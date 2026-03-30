@@ -5,19 +5,19 @@
 
 :root,
 html[data-theme="light"] {
-  --background: #F8F7F4;
-  --foreground: #1C1C1E;
-  --accent: #C2822A;
-  --muted: #E5E4E0;
-  --border: #E5E4E0;
+  --background: #f8f7f4;
+  --foreground: #1c1c1e;
+  --accent: #c2822a;
+  --muted: #e5e4e0;
+  --border: #e5e4e0;
 }
 
 html[data-theme="dark"] {
   --background: #141417;
-  --foreground: #E8E6E1;
-  --accent: #D4963A;
-  --muted: #2C2C30;
-  --border: #2C2C30;
+  --foreground: #e8e6e1;
+  --accent: #d4963a;
+  --muted: #2c2c30;
+  --border: #2c2c30;
 }
 
 @theme inline {
@@ -69,4 +69,14 @@ html[data-theme="dark"] {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 1rem;
+}
+
+.hero-description a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.hero-description a:hover {
+  opacity: 0.8;
 }
